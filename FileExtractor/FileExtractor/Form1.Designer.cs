@@ -37,11 +37,12 @@ namespace FileExtractor
             this.DestinationLabel = new System.Windows.Forms.Label();
             this.DestinationTextBox = new System.Windows.Forms.TextBox();
             this.ExtractButton = new System.Windows.Forms.Button();
+            this.TitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ExtensionTextBox
             // 
-            this.ExtensionTextBox.Location = new System.Drawing.Point(155, 49);
+            this.ExtensionTextBox.Location = new System.Drawing.Point(155, 76);
             this.ExtensionTextBox.Name = "ExtensionTextBox";
             this.ExtensionTextBox.Size = new System.Drawing.Size(538, 22);
             this.ExtensionTextBox.TabIndex = 0;
@@ -50,7 +51,7 @@ namespace FileExtractor
             // ExtensionLabel
             // 
             this.ExtensionLabel.AutoSize = true;
-            this.ExtensionLabel.Location = new System.Drawing.Point(27, 52);
+            this.ExtensionLabel.Location = new System.Drawing.Point(26, 76);
             this.ExtensionLabel.Name = "ExtensionLabel";
             this.ExtensionLabel.Size = new System.Drawing.Size(94, 17);
             this.ExtensionLabel.TabIndex = 1;
@@ -60,7 +61,7 @@ namespace FileExtractor
             // HintLabel
             // 
             this.HintLabel.AutoSize = true;
-            this.HintLabel.Location = new System.Drawing.Point(152, 99);
+            this.HintLabel.Location = new System.Drawing.Point(152, 118);
             this.HintLabel.Name = "HintLabel";
             this.HintLabel.Size = new System.Drawing.Size(277, 17);
             this.HintLabel.TabIndex = 2;
@@ -69,7 +70,7 @@ namespace FileExtractor
             // FolderPathLabel
             // 
             this.FolderPathLabel.AutoSize = true;
-            this.FolderPathLabel.Location = new System.Drawing.Point(27, 158);
+            this.FolderPathLabel.Location = new System.Drawing.Point(27, 179);
             this.FolderPathLabel.Name = "FolderPathLabel";
             this.FolderPathLabel.Size = new System.Drawing.Size(93, 17);
             this.FolderPathLabel.TabIndex = 3;
@@ -78,7 +79,7 @@ namespace FileExtractor
             // 
             // FolderPathTextBox
             // 
-            this.FolderPathTextBox.Location = new System.Drawing.Point(155, 158);
+            this.FolderPathTextBox.Location = new System.Drawing.Point(155, 176);
             this.FolderPathTextBox.Name = "FolderPathTextBox";
             this.FolderPathTextBox.Size = new System.Drawing.Size(538, 22);
             this.FolderPathTextBox.TabIndex = 4;
@@ -113,11 +114,25 @@ namespace FileExtractor
             this.ExtractButton.UseVisualStyleBackColor = false;
             this.ExtractButton.Click += new System.EventHandler(this.ExtractButton_Click);
             // 
+            // TitleLabel
+            // 
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.TitleLabel.Location = new System.Drawing.Point(196, 9);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(441, 20);
+            this.TitleLabel.TabIndex = 8;
+            this.TitleLabel.Text = "Extract Files of specific Extension(s) from a Folder";
+            this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.ExtractButton);
             this.Controls.Add(this.DestinationTextBox);
             this.Controls.Add(this.DestinationLabel);
@@ -144,6 +159,7 @@ namespace FileExtractor
         private System.Windows.Forms.Label DestinationLabel;
         private System.Windows.Forms.TextBox DestinationTextBox;
         private System.Windows.Forms.Button ExtractButton;
+        private System.Windows.Forms.Label TitleLabel;
     }
 }
 

@@ -1,0 +1,10 @@
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\bin\Debug\FileExtractor.exe.config
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\bin\Debug\FileExtractor.exe
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\bin\Debug\FileExtractor.pdb
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\obj\Debug\FileExtractor.csprojAssemblyReference.cache
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\obj\Debug\FileExtractor.Form1.resources
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\obj\Debug\FileExtractor.Properties.Resources.resources
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\obj\Debug\FileExtractor.csproj.GenerateResource.cache
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\obj\Debug\FileExtractor.csproj.CoreCompileInputs.cache
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\obj\Debug\FileExtractor.exe
+G:\My Projects\Extract Files of Specific Extension from Folder\FileExtractor\FileExtractor\obj\Debug\FileExtractor.pdb

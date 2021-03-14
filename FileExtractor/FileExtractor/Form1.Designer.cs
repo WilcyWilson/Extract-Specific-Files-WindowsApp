@@ -60,7 +60,7 @@ namespace FileExtractor
             // HintLabel
             // 
             this.HintLabel.AutoSize = true;
-            this.HintLabel.Location = new System.Drawing.Point(27, 99);
+            this.HintLabel.Location = new System.Drawing.Point(152, 99);
             this.HintLabel.Name = "HintLabel";
             this.HintLabel.Size = new System.Drawing.Size(277, 17);
             this.HintLabel.TabIndex = 2;

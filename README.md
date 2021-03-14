@@ -4,3 +4,6 @@
 
 ## Wireframe 
 ![Wireframe](Wireframe.png)
+
+## Program Design 
+![DesignPhase](ProgramDesign.png)

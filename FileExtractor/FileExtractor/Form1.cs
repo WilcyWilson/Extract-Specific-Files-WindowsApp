@@ -19,7 +19,7 @@ namespace FileExtractor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ExtensionTextBox_TextChanged(object sender, EventArgs e)
@@ -53,6 +53,11 @@ namespace FileExtractor
         }
 
         private void ExtractButton_Click(object sender, EventArgs e)
+        {
+            OutputLabel.Text = ExtensionTextBox.Text;
+        }
+
+        private void OutputLabel_Click(object sender, EventArgs e)
         {
 
         }

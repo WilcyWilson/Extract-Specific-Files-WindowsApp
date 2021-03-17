@@ -39,6 +39,10 @@ namespace FileExtractor
             this.ExtractButton = new System.Windows.Forms.Button();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.OutputLabel = new System.Windows.Forms.Label();
+            this.FolderPathDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.BrowseFolderPathButton = new System.Windows.Forms.Button();
+            this.BrowseDestinationButton = new System.Windows.Forms.Button();
+            this.DestinationDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // ExtensionTextBox
@@ -131,18 +135,40 @@ namespace FileExtractor
             // OutputLabel
             // 
             this.OutputLabel.AutoSize = true;
-            this.OutputLabel.Location = new System.Drawing.Point(372, 289);
+            this.OutputLabel.Location = new System.Drawing.Point(335, 296);
             this.OutputLabel.Name = "OutputLabel";
             this.OutputLabel.Size = new System.Drawing.Size(59, 17);
             this.OutputLabel.TabIndex = 9;
             this.OutputLabel.Text = "Output: ";
             this.OutputLabel.Click += new System.EventHandler(this.OutputLabel_Click);
             // 
+            // BrowseFolderPathButton
+            // 
+            this.BrowseFolderPathButton.Location = new System.Drawing.Point(713, 171);
+            this.BrowseFolderPathButton.Name = "BrowseFolderPathButton";
+            this.BrowseFolderPathButton.Size = new System.Drawing.Size(75, 32);
+            this.BrowseFolderPathButton.TabIndex = 10;
+            this.BrowseFolderPathButton.Text = "Browse";
+            this.BrowseFolderPathButton.UseVisualStyleBackColor = true;
+            this.BrowseFolderPathButton.Click += new System.EventHandler(this.BrowseFolderPathButton_Click);
+            // 
+            // BrowseDestinationButton
+            // 
+            this.BrowseDestinationButton.Location = new System.Drawing.Point(713, 236);
+            this.BrowseDestinationButton.Name = "BrowseDestinationButton";
+            this.BrowseDestinationButton.Size = new System.Drawing.Size(75, 29);
+            this.BrowseDestinationButton.TabIndex = 11;
+            this.BrowseDestinationButton.Text = "Browse";
+            this.BrowseDestinationButton.UseVisualStyleBackColor = true;
+            this.BrowseDestinationButton.Click += new System.EventHandler(this.BrowseDestinationButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BrowseDestinationButton);
+            this.Controls.Add(this.BrowseFolderPathButton);
             this.Controls.Add(this.OutputLabel);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.ExtractButton);
@@ -174,6 +200,10 @@ namespace FileExtractor
         private System.Windows.Forms.Button ExtractButton;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label OutputLabel;
+        private System.Windows.Forms.FolderBrowserDialog FolderPathDialog;
+        private System.Windows.Forms.Button BrowseFolderPathButton;
+        private System.Windows.Forms.Button BrowseDestinationButton;
+        private System.Windows.Forms.FolderBrowserDialog DestinationDialog;
     }
 }
 

@@ -8,5 +8,5 @@
 ## Program Design 
 ![DesignPhase](ProgramDesign.png)
 
-##Early Demo
+## Early Demo
 ![EarlyDemo](EarlyDemo.gif)

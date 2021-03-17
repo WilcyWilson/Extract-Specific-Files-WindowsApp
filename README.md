@@ -7,3 +7,6 @@
 
 ## Program Design 
 ![DesignPhase](ProgramDesign.png)
+
+##Early Demo
+![EarlyDemo](EarlyDemo.gif)

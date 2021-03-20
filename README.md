@@ -1,8 +1,7 @@
-# SP-WinFormsCS-ExtractFiles
-### Extract Files of Specific Extension from Folder. <br />
-### Windows Forms App(.NET Framework) using C#
+# V1.0 is out in master branch
 
-## V1.0 is out in master branch
+# SP-WinFormsCS-ExtractFiles V1.1
+### Extract Files of Specific Extension from Folder.
 
 ## Upcoming Features in V1.1
 * Radio Button options to Move or Copy Files

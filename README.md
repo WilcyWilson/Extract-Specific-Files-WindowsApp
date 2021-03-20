@@ -1,12 +1,7 @@
-# V1.0 is Out
-## Working Demo V1.0
-
+# Extract Files of Specific Extension from Folder.
+## V1.0 is Out
+### Working Demo V1.0
 ![Working Demo V1.0](WorkingDemo.gif)
-
-# SP-WinFormsCS-ExtractFiles V1.1
-### Extract Files of Specific Extension from Folder.
-
-
 
 ## Upcoming Features in V1.1
 * Radio Button options to Move or Copy Files

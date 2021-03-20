@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FileExtractor
 {
@@ -59,6 +60,7 @@ namespace FileExtractor
            if(CheckExtension())
            {
                 OutputLabel.Text = "True";
+                FolderPath();
            }
            else 
            {
@@ -66,26 +68,71 @@ namespace FileExtractor
            }
         }
 
+        private void FolderPath()
+        {
+            string[] extensions = GetExtensions();
+            DirectoryInfo folderPathDirectory = new DirectoryInfo(FolderPathTextBox.Text);
+            FileInfo[] files = folderPathDirectory.GetFiles();
+            List<FileInfo> filesOfExtensions = new List<FileInfo>();
+
+            foreach (var item in files)
+            {
+                for (int i = 0; i < extensions.Length; i++)
+                {
+                    if (item.Extension == extensions[i])
+                    {
+                        filesOfExtensions.Add(item);
+                    }
+                } 
+            }
+            for (int i = 0; i < filesOfExtensions.Count; i++)
+            {
+                filesOfExtensions[i].CopyTo(DestinationTextBox.Text+"\\" + filesOfExtensions[i].Name);
+            }
+
+            //DirectoryInfo[] folderPathDirectories = folderPathDirectory.GetDirectories();
+            //foreach (var item in folderPathDirectories)
+            //{
+            //    FileInfo[] files = item.GetFiles();
+            //}
+            
+        }
+
         private void OutputLabel_Click(object sender, EventArgs e)
         {
 
         }
 
+        private string[] GetExtensions()
+        {
+            string[] extensions = ExtensionTextBox.Text.Trim().Split(' ');
+            return extensions;
+        }
+
         private bool CheckExtension()
         {
-            string[] extensions = ExtensionTextBox.Text.Split(' ');
+            string[] extensions = GetExtensions();
             bool check = false;
             foreach (var item in extensions)
             {
-                if (item.Substring(0, 1) == "." && item.Substring(1, item.Length - 1).All(c => char.IsLetterOrDigit(c)))
+                try
                 {
-                    check = true;
+                    if (item.Substring(0, 1) == "." && item.Substring(1, item.Length - 1).All(c => char.IsLetterOrDigit(c)))
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        check = false;
+                        break;
+                    }
                 }
-                else
+                catch (Exception e)
                 {
+                    Console.WriteLine(e.Message);
                     check = false;
                     break;
-                }
+                } 
             }
             return check;
         }

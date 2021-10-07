@@ -18,11 +18,14 @@ namespace FileExtractor
         {
             InitializeComponent();
             DestinationTextBox.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            FolderPathTextBox.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            FolderPathTextBox.ReadOnly = true;
+            DestinationTextBox.ReadOnly = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ExtensionTextBox_TextChanged(object sender, EventArgs e)
@@ -57,15 +60,15 @@ namespace FileExtractor
 
         private void ExtractButton_Click(object sender, EventArgs e)
         {
-           if(CheckExtension())
-           {
+            if (CheckExtension())
+            {
                 OutputLabel.Text = "True";
                 FolderPath();
-           }
-           else 
-           {
+            }
+            else
+            {
                 OutputLabel.Text = "Something Wrong in Extension(s) Field. Check Again!!!";
-           }
+            }
         }
 
         private void FolderPath()
@@ -73,7 +76,11 @@ namespace FileExtractor
             string[] extensions = GetExtensions();
             DirectoryInfo folderPathDirectory = new DirectoryInfo(FolderPathTextBox.Text);
             FileInfo[] files = folderPathDirectory.GetFiles();
+            DirectoryInfo destinationDirectory = new DirectoryInfo(DestinationTextBox.Text);
+            FileInfo[] destinationFiles = destinationDirectory.GetFiles();
             List<FileInfo> filesOfExtensions = new List<FileInfo>();
+            List<FileInfo> destinationFilesList = new List<FileInfo>();
+            bool checkRepeat = false;
 
             foreach (var item in files)
             {
@@ -83,11 +90,30 @@ namespace FileExtractor
                     {
                         filesOfExtensions.Add(item);
                     }
-                } 
+                }
+            }
+            foreach (var item in destinationFiles)
+            {
+                destinationFilesList.Add(item);
             }
             for (int i = 0; i < filesOfExtensions.Count; i++)
             {
-                filesOfExtensions[i].CopyTo(DestinationTextBox.Text+"\\" + filesOfExtensions[i].Name);
+                for (int j = 0; j < destinationFilesList.Count; j++)
+                {
+                    if (filesOfExtensions[i].Name.Equals(destinationFilesList[j].Name))
+                    {
+                        checkRepeat = true;
+                        OutputLabel.Text = "Same file name in folder path and destination. Error.";
+                        break;
+                    }
+                }
+            }
+            if (checkRepeat == false)
+            {
+                for (int i = 0; i < filesOfExtensions.Count; i++)
+                {
+                    filesOfExtensions[i].CopyTo(DestinationTextBox.Text + "\\" + filesOfExtensions[i].Name);
+                }
             }
 
             //DirectoryInfo[] folderPathDirectories = folderPathDirectory.GetDirectories();
@@ -95,7 +121,7 @@ namespace FileExtractor
             //{
             //    FileInfo[] files = item.GetFiles();
             //}
-            
+
         }
 
         private void OutputLabel_Click(object sender, EventArgs e)
@@ -132,7 +158,7 @@ namespace FileExtractor
                     Console.WriteLine(e.Message);
                     check = false;
                     break;
-                } 
+                }
             }
             return check;
         }
@@ -141,7 +167,7 @@ namespace FileExtractor
         {
             FolderPathDialog.ShowNewFolderButton = true;
             DialogResult result = FolderPathDialog.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 FolderPathTextBox.Text = FolderPathDialog.SelectedPath;
             }
@@ -151,7 +177,7 @@ namespace FileExtractor
         {
             DestinationDialog.ShowNewFolderButton = true;
             DialogResult result = DestinationDialog.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 DestinationTextBox.Text = DestinationDialog.SelectedPath;
             }
